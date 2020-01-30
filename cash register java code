@@ -1,0 +1,29 @@
+
+public class CashRegister {
+	
+//create and initialize local variables
+	private double purchase;
+	private double payment;
+
+public CashRegister()
+{
+	purchase = 0;
+	payment = 0;
+}
+
+public void recordPurchase(double amount) 
+{
+	purchase = purchase + amount;
+	
+}
+public void recievePayment(double moneyGiven)
+{
+	payment = payment + moneyGiven;
+}
+public double giveChange()
+{
+	
+	return (payment - purchase);
+	
+}
+}
