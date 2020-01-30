@@ -1,22 +1,40 @@
+package cashregisterpackage;
+
 import java.util.Scanner;
 
 public class CashRegisterTester {
 
 	public static void main(String[] args) {
+
+		//connect cash register to tester
 		CashRegister register = new CashRegister();
-		// TODO Auto-generated method stub
-		double costPurchase = 0;
-		double amountPaid = 0;
+
+		//declare and initialize local variables
 		final double SENTINEL = -1;
+
+		//declare the scanner
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Enter a purchase amount or - 1 to stop: ");
-		costPurchase = scan.nextDouble();
+		
+		//while loop for reading in purchases and payments
 		while(scan.hasNextDouble()) {
-			
+			double costPurchase = scan.nextDouble();
+			if(costPurchase == SENTINEL) {
+				break;
+			}
+			System.out.print("Enter a purchase amount or - 1 to stop: ");
+			register.recordPurchase(costPurchase);
 		}
 		System.out.print("Enter a payment amount: ");
-		amountPaid = scan.nextDouble();
+		double amountPaid = scan.nextDouble();
+		register.receivePayment(amountPaid);
+		register.giveChange();
+		register.printChange();
+		
+	
+		
 
 	}
+
 
 }
