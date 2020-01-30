@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class CashRegisterTester {
+
+	public static void main(String[] args) {
+		CashRegister register = new CashRegister();
+		// TODO Auto-generated method stub
+		double costPurchase = 0;
+		double amountPaid = 0;
+		final double SENTINEL = -1;
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter a purchase amount or - 1 to stop: ");
+		costPurchase = scan.nextDouble();
+		while(scan.hasNextDouble()) {
+			
+		}
+		System.out.print("Enter a payment amount: ");
+		amountPaid = scan.nextDouble();
+
+	}
+
+}
